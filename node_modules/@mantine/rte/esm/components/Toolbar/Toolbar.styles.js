@@ -1,0 +1,41 @@
+import { createStyles } from '@mantine/core';
+
+var useStyles = createStyles((theme, { sticky, stickyOffset }) => ({
+  toolbarGroup: {
+    display: "flex",
+    alignItems: "center",
+    flexWrap: "wrap",
+    margin: theme.spacing.md / 2
+  },
+  toolbar: {
+    position: sticky ? "sticky" : "relative",
+    zIndex: 1,
+    top: sticky ? stickyOffset : 0,
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    borderBottom: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[4]}`,
+    borderTopRightRadius: theme.radius.sm,
+    borderTopLeftRadius: theme.radius.sm,
+    padding: `${theme.spacing.sm}px ${theme.spacing.md}px`
+  },
+  toolbarInner: {
+    display: "flex",
+    flexWrap: "wrap",
+    margin: -theme.spacing.md / 2
+  },
+  toolbarControl: {
+    "& + &": {
+      borderLeftWidth: 0
+    },
+    "&:first-of-type": {
+      borderTopLeftRadius: theme.radius.sm,
+      borderBottomLeftRadius: theme.radius.sm
+    },
+    "&:last-of-type": {
+      borderTopRightRadius: theme.radius.sm,
+      borderBottomRightRadius: theme.radius.sm
+    }
+  }
+}));
+
+export default useStyles;
+//# sourceMappingURL=Toolbar.styles.js.map

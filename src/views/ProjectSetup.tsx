@@ -7,7 +7,7 @@ import { SiMongodb } from "react-icons/si";
 import { FiHardDrive, FiLink2 } from "react-icons/fi";
 import {  AiOutlineUser } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-
+import API from "./API"
 
 import {
   Modal,
@@ -51,6 +51,12 @@ const data = [
 
 
 const ProjectSetup = () => {
+    const [showAdditionalFields, setShowAdditionalFields] = useState(false);
+    const [showButton, setButton] = useState(true);
+    const handleNextClick = () => {
+        setShowAdditionalFields(true);
+        setButton(false);
+    };
   const [active, setActive] = useState(1);
   const nextStep = () =>
   setActive((current) => (current < 3 ? current + 1 : current));
@@ -265,19 +271,23 @@ const ProjectSetup = () => {
             {
               active == 0?<EntitiesSetup DBData={DBData} deleteEntity={deleteEntity} deleteEntityField={deleteEntityField} addEntityField={addEntityField} addEntity={addEntity}  ></EntitiesSetup>
               :<></>
-            }
+                          }
+                          {showAdditionalFields && <API />}
+                          <div className="px-5 py-3 flex ">
+                              <Button onClick={handleNextClick}>
+                                  Next
+                              </Button>
 
-            <div className="px-5 py-3 flex ">
-            <Button >
-              Next
-            </Button>
+                          </div>
+                          
             </div>
-            </div>
-            
-            
+                      
+                      
           
           </div>
+           
         }
+              
       </Modal>
     </>
   );

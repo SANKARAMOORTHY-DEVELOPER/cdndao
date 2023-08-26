@@ -1,0 +1,58 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var core = require('@mantine/core');
+
+const sizes = {
+  xs: 32,
+  sm: 40,
+  md: 44,
+  lg: 50,
+  xl: 54
+};
+var useStyles = core.createStyles((theme, { size }) => ({
+  calendarHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    align: "center",
+    marginBottom: theme.fn.size({ size, sizes: theme.spacing })
+  },
+  calendarHeaderControl: {
+    width: theme.fn.size({ size, sizes }),
+    height: theme.fn.size({ size, sizes }),
+    "&:disabled": {
+      opacity: 0,
+      cursor: "default"
+    }
+  },
+  calendarHeaderLevel: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: theme.fn.size({ size, sizes }),
+    fontSize: theme.fn.size({ size, sizes: theme.fontSizes }),
+    padding: `0 ${theme.fn.size({ size, sizes: theme.spacing })}px`,
+    borderRadius: theme.radius.sm,
+    fontWeight: 500,
+    flex: 1,
+    textAlign: "center",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+    "&:hover": {
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[0]
+    },
+    "&:disabled": {
+      "&:hover": {
+        backgroundColor: "transparent",
+        cursor: "default"
+      }
+    }
+  },
+  calendarHeaderLevelIcon: {
+    marginLeft: 4
+  }
+}));
+
+exports.default = useStyles;
+exports.sizes = sizes;
+//# sourceMappingURL=CalendarHeader.styles.js.map
