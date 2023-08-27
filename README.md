@@ -1,3 +1,8 @@
+**problem statement**
+```Current algorithm hosting lacks transparency and regulation, hindering integration into gaming and social media platforms. A solution is needed for decentralized hosting, allowing government and public approval via voting. This platform aims to empower developers by providing a compliant, efficient, and community-driven environment, akin to a CDN, fostering innovation across industries```
+
+
+
 ```git clone https://github.com/SANKARAMOORTHY-DEVELOPER/cdndao.git```
 # SETUP
 
